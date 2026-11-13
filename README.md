@@ -1,4 +1,3 @@
-Set-Content -Path "README.md" -Value "`
 # LangGraph Practice Labs`n``n`
 A collection of hands-on practice projects exploring stateful AI workflows, sequential pipelines, and multi-agent architectures using **LangGraph**, **LangChain**, and **Python**.`n``n`
 ---`n``n`
@@ -17,4 +16,4 @@ A collection of hands-on practice projects exploring stateful AI workflows, sequ
    \`\`\`bash`n`
    git clone https://github.com/bhupendra700/LangGraph.git`n`
    cd LangGraph`n`
-   \`\`\`'
+   \`\`\`
