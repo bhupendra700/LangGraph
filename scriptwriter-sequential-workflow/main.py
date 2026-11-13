@@ -57,30 +57,33 @@ def translator_node(state: Pipeline) -> dict:
     return {"final_output" : response.content.strip()}
 
 
-# Step 3 -> Creating graph and connect node through edges and edges is imp to create workflow.
-
-
+# Step 3 -> Creating Graph (Including multiple stages)
 from langgraph.graph import StateGraph , START , END
 
+# Stage a) Initializing Graph
 graph = StateGraph(Pipeline)
 
-# Connecting node with graph
+# Stage b) Connecting node with graph
 graph.add_node("editor" , editor_node)
 graph.add_node("scriptwriter" , scriptwriter_node)
 graph.add_node("translator" , translator_node)
 
-# Creating Edges (sequential - one after another)
+# Stage c) Creating Edges (sequential - one after another)
 graph.add_edge(START , "editor")
 graph.add_edge("editor" , "scriptwriter")
 graph.add_edge("scriptwriter" , "translator")
 graph.add_edge("translator" , END)
 
+# Stage d) Compiling graph
 app = graph.compile()
 
-User_Input = input("Enter prompt here: ")
-# AI agents are the future of tech. They can think, plan, and act on their own. LangGraph helps you build these agents with proper control and memory.
+# Stage e) Taking user input (raw input)
+User_Input = input("Enter prompt here: ") # e.g (input):- AI agents are the future of tech. They can think, plan, and act on their own. LangGraph helps you build these agents with proper control and memory.
+
+# Stage f) Invoke the graph and taking result
 result = app.invoke({
     "raw_input" : User_Input
 })
 
+# Stage g) Printing final result
 print(result['final_output'])
