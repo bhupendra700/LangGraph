@@ -3,6 +3,10 @@ from dotenv import load_dotenv
 load_dotenv()
 from pydantic import BaseModel
 from typing import Optional
+from langchain_groq import ChatGroq
+
+api_key = getenv("GROQ_API_KEY")
+llm = ChatGroq(model="openai/gpt-oss-120b" , temperature=0.5 , api_key=api_key)
 
 # Step 1 -> State creation
 class Pipeline(BaseModel):
@@ -10,11 +14,6 @@ class Pipeline(BaseModel):
     edited_text: Optional[str] = ""
     script_text: Optional[str] = ""
     final_output: Optional[str] = ""
-
-
-from langchain_groq import ChatGroq
-api_key = getenv("GROQ_API_KEY")
-llm = ChatGroq(model="openai/gpt-oss-120b" , temperature=0.5 , api_key=api_key)
 
 
 # Step 2 -> Creating nodes

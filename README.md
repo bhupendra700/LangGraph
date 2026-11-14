@@ -9,6 +9,7 @@ A collection of hands-on practice projects exploring stateful AI workflows, sequ
 | #   | Script File                                                                          | Pattern             | Description                                                                                    |
 | :-- | :----------------------------------------------------------------------------------- | :------------------ | :--------------------------------------------------------------------------------------------- |
 | 01  | [`01_scriptwriter_sequential_workflow.py`](./01_scriptwriter_sequential_workflow.py) | Sequential Workflow | Automated script generation pipeline passing state linearly through multiple processing nodes. |
+| 02  | [`02_parallel_reducers_workflow.py`](./02_parallel_reducers_workflow.py)             | Parallel & Reducers | Multi-branch workflow executing tasks concurrently and reducing states using LangGraph.        |
 
 ---
 
