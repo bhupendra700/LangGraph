@@ -6,59 +6,69 @@ A collection of hands-on practice projects exploring stateful AI workflows, sequ
 
 ## Projects Index
 
-| # | Project Folder | Pattern | Description |
-| :--- | :--- | :--- | :--- |
-| 01 | [`scriptwriter-sequential-workflow`](./scriptwriter-sequential-workflow) | Sequential Workflow | Automated script generation pipeline passing state linearly through multiple processing nodes. |
+| #   | Script File                                                                          | Pattern             | Description                                                                                    |
+| :-- | :----------------------------------------------------------------------------------- | :------------------ | :--------------------------------------------------------------------------------------------- |
+| 01  | [`01_scriptwriter_sequential_workflow.py`](./01_scriptwriter_sequential_workflow.py) | Sequential Workflow | Automated script generation pipeline passing state linearly through multiple processing nodes. |
 
 ---
 
 ## Tech Stack
 
-* **Orchestration:** LangGraph, LangChain
-* **Language:** Python 3.10+
-* **Environment Management:** Independent virtual environments (`.venv`) per project folder
+- **Orchestration:** LangGraph, LangChain
+- **Language:** Python 3.10+
+- **Environment Management:** Single Root Virtual Environment (`.venv`)
 
 ---
 
 ## Quick Setup & Run
 
-1. **Clone the repository:**
+### 1. Clone the repository
 
-   ```bash
-   git clone https://github.com/bhupendra700/LangGraph.git
-   cd LangGraph
-   ```
+```bash
+git clone https://github.com/bhupendra700/LangGraph.git
+cd LangGraph
+```
 
-2. **Navigate to your desired project folder:**
+### 2. Create and activate a virtual environment in the root folder
 
-   ```bash
-   cd scriptwriter-sequential-workflow
-   ```
+```bash
+python -m venv .venv
+```
 
-3. **Create and activate a virtual environment inside the folder:**
+- **Windows PowerShell:**
 
-   ```bash
-   python -m venv .venv
+  ```powershell
+  .\.venv\Scripts\Activate.ps1
+  ```
 
-   # Windows PowerShell:
-   .\.venv\Scripts\Activate.ps1
+- **Git Bash (Windows):**
 
-   # macOS / Linux:
-   source .venv/bin/activate
-   ```
+  ```bash
+  source .venv/Scripts/activate
+  ```
 
-4. **Configure environment variables:**
+- **macOS / Linux:**
 
-   Create a `.env` file in the project folder and add your API keys:
+  ```bash
+  source .venv/bin/activate
+  ```
 
-   ```env
-   OPENAI_API_KEY=your_api_key_here
-   GOOGLE_API_KEY=your_api_key_here
-   ```
+### 3. Configure environment variables
 
-5. **Install dependencies and run:**
+Create a `.env` file in the root folder and add your API keys:
 
-   ```bash
-   pip install -r requirements.txt
-   python main.py
-   ```
+```env
+GROQ_API_KEY=your_api_key_here
+```
+
+### 4. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 5. Run any practice script directly
+
+```bash
+python 01_scriptwriter_sequential_workflow.py
+```
